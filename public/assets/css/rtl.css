@@ -1,0 +1,217 @@
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+.carousel-caption {
+    text-align: right;
+}
+
+.navbar-nav {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.language-switcher-section {
+    justify-content: flex-start; 
+    background-color: #eb3d36;
+    /* Align to the left in RTL */
+}
+.language-switcher-section a{
+
+color: #ffffff;
+    /* Align to the left in RTL */
+}
+
+.language-switcher a {
+    margin: 0 5px;
+}
+
+.language-switcher a.active {
+    border-bottom: 2px solid #eb3d36;
+}
+
+.features-item {
+    text-align: right;
+
+}
+.features-item i{
+    text-align: right;
+    margin-left:10px ;
+
+}
+
+
+.product-info {
+    text-align: right;
+}
+
+.call-to-action .cta-btn {
+    float: left;
+}
+
+.section-title h2, .section-title p {
+    text-align: right;
+}/* General RTL Adjustments */
+
+body[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+.desktop-nav {
+    text-align: left;
+}
+
+body[dir="rtl"] .language-switcher-section {
+    justify-content: flex-start; /* Align language switcher to the left */
+}
+
+body[dir="rtl"] .hamburger {
+    justify-content: flex-end; /* Position the hamburger to the left in RTL */
+}
+
+/* Menubar for RTL */
+body[dir="rtl"] .menubar {
+    left: auto;
+    right: -100%; /* Start hidden off-screen from the right */
+    transition: right 0.5s ease-in-out;
+}
+
+body[dir="rtl"] .menubar.active {
+    right: 0; /* Slide in from the right when active */
+}
+
+body[dir="ltr"] .menubar {
+    right: auto;
+    left: -100%; /* Start hidden off-screen from the left */
+    transition: left 0.5s ease-in-out;
+}
+
+body[dir="ltr"] .menubar.active {
+    left: 0; 
+}
+.info-item i {
+
+    margin-left: 15px !important;
+    margin-right: 0px !important;
+}
+.portfolio .portfolio-item .portfolio-info h4 {
+
+    padding-right: 67px !important;
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+
+    padding-right: 67px !important;
+}
+
+
+  .secondery-logo img{
+
+    margin-right:30px !important;
+    margin-left: 0px !important;
+  }
+
+    /*--------------------------------------------------------------
+    # Blog Section (RTL)
+    --------------------------------------------------------------*/
+    .blog-section {
+      direction: rtl !important;
+      text-align: right !important;
+      background-color: #f9f9f9 !important;
+      padding: 60px 0 !important;
+    }
+
+  .blog-section .title-block {
+      text-align: center !important;
+      margin-bottom: 40px !important;
+  }
+
+  .blog-section .title-block h2 {
+      font-size: 32px !important;
+      font-weight: 700 !important;
+      margin-bottom: 15px !important;
+      color: #333 !important;
+  }
+
+  .blog-section .title-block p {
+      font-size: 16px !important;
+      color: #666 !important;
+      line-height: 1.6 !important;
+  }
+
+  .blog-section .features {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 30px !important;
+      justify-content: center !important;
+  }
+
+  .blog-section .feature-item {
+      background-color: #fff !important;
+      border: 1px solid #e0e0e0 !important;
+      border-radius: 8px !important;
+      padding: 30px !important;
+      text-align: center !important;
+      flex: 1 1 300px !important;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
+  }
+
+
+  .blog-section .feature-item .icon {
+      font-size: 50px !important;
+      color: var(--accent-color) !important;
+      margin-bottom: 20px !important;
+  }
+
+  .blog-section .feature-item h3 {
+      font-size: 20px !important;
+      font-weight: 600 !important;
+      margin-bottom: 15px !important;
+      color: #333 !important;
+  }
+
+  .blog-section .feature-item p {
+      font-size: 14px !important;
+      color: #666 !important;
+      line-height: 1.6 !important;
+  }
+
+  .blog-section .btn-container {
+      text-align: center !important;
+      margin-top: 30px !important;
+  }
+
+  .blog-section .btn-container .btn-narrow {
+      padding: 10px 30px !important;
+      background-color: var(--accent-color) !important;
+      color: #fff !important;
+      border-radius: 4px !important;
+      text-decoration: none !important;
+      transition: background-color 0.3s ease-in-out !important;
+  }
+
+  .blog-section .btn-container .btn-narrow:hover {
+      background-color: var(--contrast-color) !important;
+  }
+
+  /* RTL Adjustments for Specific Elements */
+  .blog-section .feature-item {
+      text-align: center !important;
+  }
+
+
+  .about .content ul li {
+    padding: 10px 0 0 0;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.carousel-caption {
+  text-align: right !important;
+}
+
+.timeline-body{
+    text-align: right !important;
+}

@@ -1,0 +1,56 @@
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.products .product-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 300px; /* Adjust card height */
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    transition: all ease-in-out 0.3s;
+    position: relative;
+    overflow: hidden;
+
+  }
+
+  .products .product-item:hover {
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+  }
+  
+  .products .product-item .product-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay on hover */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .products .product-item:hover .product-info {
+    opacity: 1;
+  }
+  
+  .products .product-item .product-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .products .product-item .product-info p {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+  }
+  
+  .carousel-caption {
+    text-align: left;
+  }
