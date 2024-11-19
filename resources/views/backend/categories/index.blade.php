@@ -178,58 +178,80 @@
                         </div>
 
                         @foreach ($category->subcategories as $subcategory)
-                            <!-- Edit Subcategory Modal -->
-                            <div class="modal fade" id="editSubcategoryModal{{ $subcategory->id }}" tabindex="-1"
-                                role="dialog" aria-labelledby="editSubcategoryModalLabel{{ $subcategory->id }}"
-                                aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <form action="{{ route('admin.categories.updateSubcategory', $subcategory->id) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Edit Subcategory</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
+                        <!-- Edit Subcategory Modal -->
+                        <div class="modal fade" id="editSubcategoryModal{{ $subcategory->id }}" tabindex="-1"
+                            role="dialog" aria-labelledby="editSubcategoryModalLabel{{ $subcategory->id }}"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <form action="{{ route('admin.categories.updateSubcategory', $subcategory->id) }}"
+                                        method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Edit Subcategory</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label>Subcategory Name (EN)</label>
+                                                <input type="text" name="name_en" class="form-control"
+                                                    value="{{ $subcategory->name_en }}" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Subcategory Name (AR)</label>
+                                                <input type="text" name="name_ar" class="form-control"
+                                                    value="{{ $subcategory->name_ar }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="d-flex justify-content-between w-100">
+                                                <button type="button" class="btn btn-danger" 
+                                                    onclick="confirmDelete({{ $subcategory->id }})">
+                                                    Delete Subcategory
                                                 </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <label>Subcategory Name (EN)</label>
-                                                    <input type="text" name="name_en" class="form-control"
-                                                        value="{{ $subcategory->name_en }}" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Subcategory Name (AR)</label>
-                                                    <input type="text" name="name_ar" class="form-control"
-                                                        value="{{ $subcategory->name_ar }}" required>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer d-flex justify-content-between">
-                                                <form action="{{ route('admin.subcategory.destroy', $subcategory->id) }}"
-                                                    method="POST" style="display: inline-block;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn btn-danger">Delete</button>
-                                                </form>
-
                                                 <div>
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close</button>
-
+                                                    <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Close</button>
                                                     <button type="submit" class="btn btn-primary">Save Changes</button>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                        @endforeach
+                        </div>
+                    @endforeach
+                    
+
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
+    <script>
+        function confirmDelete(subcategoryId) {
+            if (confirm('Are you sure you want to delete this subcategory?')) {
+                fetch('{{ route('admin.subcategory.destroy', ':id') }}'.replace(':id', subcategoryId), {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({
+                        '_method': 'DELETE'
+                    })
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.reload();
+                    }
+                }).catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to delete subcategory');
+                });
+            }
+        }
+        </script>
 @endsection
