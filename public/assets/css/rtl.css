@@ -10,11 +10,6 @@ body {
     margin: 5px;
     width: 103px !important;
 }
-.desktop-nav {
-    display: flex;
-    list-style: none;
-    width: fit-content !important;
-  }
 .desktop-nav .dropdown-menu li {
         margin: 5px;
         width: 90% !important;
@@ -226,4 +221,8 @@ body[dir="ltr"] .menubar.active {
 
 .timeline-body{
     text-align: right !important;
+}
+
+.desktop-nav{
+    width: 467px !important;
 }
