@@ -124,7 +124,7 @@
         .products .product-item .card-img-top {
             height: 200px;
             /* Fixed height for image uniformity */
-            object-fit: cover;
+            object-fit: contain;
             /* Maintain aspect ratio while cropping */
             border-bottom: 1px solid #e0e0e0;
         }
