@@ -139,7 +139,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-width: 220px;
+            min-width: 312px;
+
             max-width: 356px;
             /* Center content vertically */
             align-items: center;
@@ -219,9 +220,29 @@
             }
         }
 
+        @media (max-width: 468px) {
+
+
+            .timeline-panel {
+                margin: 0 auto 20px auto;
+                width: 300px;
+            }
+
+
+        }
+
         #backGroudGray {
             background-color: #f9f9f9;
             padding-top: 20px;
+
+        }
+
+        @media screen and (max-width: 580px) {
+
+            .section-title p {
+                margin-top: 5px;
+                font-size: 22px !important;
+            }
         }
     </style>
     @include('components.banner')
@@ -232,23 +253,20 @@
                 <div class="col-md-4 col-sm-4 service-wrap">
                     <div class="service service animate-change changed animated-fast">
                         <h3><i class="ti-ruler-pencil"></i> {{ __('certificates.altajer_althahabi_certificate_title') }}</h3>
-                        <p>{{ __('certificates.altajer_althahabi_certificate_description') }}</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 service-wrap">
                     <div class="service">
                         <h3><i class="ti-settings"></i> {{ __('certificates.iso_certification_title') }}</h3>
-                        <p>{{ __('certificates.iso_certification_description') }}</p>
                     </div>
                 </div>
-    
+
                 <div class="col-md-4 col-sm-4 service-wrap">
                     <div class="service">
                         <h3><i class="ti-check-box"></i> {{ __('certificates.halal_food_certificate_title') }}</h3>
-                        <p>{{ __('certificates.halal_food_certificate_description') }}</p>
                     </div>
                 </div>
-    
+
                 <div class="clearfix visible-md-block visible-sm-block"></div>
             </div>
         </div>

@@ -14,7 +14,18 @@
 
         .carousel-caption {
             bottom: 20px;
-        }
+        }        @media (min-width: 580px) and (max-width: 768px) {
+  .section-title p {
+    font-size: 30px !important;
+  }
+}
+@media screen and (max-width: 580px) {
+
+  .section-title p {
+    margin-top: 5px;
+    font-size: 22px !important;
+  }
+}
     </style>
     <!-- Hero Section -->
     <div class="light-background">
@@ -75,7 +86,7 @@
     </div>
 
     <!-- Clients Section -->
-    <section id="clients" class="clients section">
+    <div id="clients" class="clients ">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -95,11 +106,11 @@
                   },
                   "breakpoints": {
                     "320": {
-                      "slidesPerView": 2,
-                      "spaceBetween": 40
+                      "slidesPerView": 4,
+                      "spaceBetween": 20
                     },
                     "480": {
-                      "slidesPerView": 3,
+                      "slidesPerView": 4,
                       "spaceBetween": 60
                     },
                     "640": {
@@ -116,7 +127,7 @@
                 <div class="swiper-wrapper align-items-center">
                     @for ($i = 1; $i <= 12; $i++)
                         <div class="swiper-slide">
-                            <img src="{{ asset('assets/img/sposnsor/' . $i . '.png') }}" class="img-fluid"
+                            <img src="{{ asset('assets/img/sposnsor/' . $i . '.png') }}" class="img-fluid swiper-img-icon"
                                 alt="{{ __('home.client') . ' ' . $i }}">
                         </div>
                     @endfor
@@ -126,7 +137,7 @@
 
         </div>
 
-    </section><!-- /Clients Section -->
+    </div><!-- /Clients Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">

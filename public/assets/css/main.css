@@ -1129,6 +1129,7 @@ section,
     font-size: 14px;
     margin: 0 0 10px 0;
   }
+
 }
 
 .portfolio .portfolio-item {
@@ -1818,15 +1819,27 @@ color: #ffffff;
 
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) !important {
   #gtco-header .text-left {
     text-align: center !important;
   }
 }
-@media screen and (max-width: 480px) {
+/* Larger screen (480-768px) first */
+@media (min-width: 580px) and (max-width: 768px) !important {
+  .section-title p {
+    font-size: 30px !important;
+  }
+}
+
+/* Smaller screen (under 480px) second */
+@media screen and (max-width: 580px) {
   #gtco-header .btn {
     display: block;
     width: 100%;
+  }
+  .section-title p {
+    margin-top: 5px;
+    font-size: 17px !important;
   }
 }
 
@@ -1898,6 +1911,7 @@ color: #ffffff;
     padding: 3em 0;
   }
 }
+
 .gtco-cover.gtco-cover-sm {
   height: 600px;
 }

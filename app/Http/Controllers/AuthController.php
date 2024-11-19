@@ -34,7 +34,7 @@ class AuthController extends Controller
     {
         $product_count = Product::count(); 
         $categories_count = Category::count(); 
-        return view('backend.dashboard', ['product_count' => $product_count, 'categories_count' => $categories_count]);
+        return view('backend.Dashboard', ['product_count' => $product_count, 'categories_count' => $categories_count]);
     }
 
     // Handle logout

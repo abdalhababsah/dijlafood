@@ -9,7 +9,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return view('pages.ContactUs');
+        return view('Pages.ContactUs');
     }
 
     public function send()

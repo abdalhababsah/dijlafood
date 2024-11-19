@@ -21,7 +21,7 @@ Route::get('/products', function () {
 
 // Photo Gallery Route
 Route::get('/gallery', function () {
-    return view('pages.gallery'); 
+    return view('Pages.gallery'); 
 })->name('gallery');
 
 // Contact Us Route
@@ -29,16 +29,16 @@ Route::get('/contact',[ContactController::class, 'index'])->name('contact');
 Route::post('/contact',[ContactController::class, 'send'])->name('contact.send');
 
 Route::get('/our-story', function () {
-    return view('pages.OurStory');
+    return view('Pages.OurStory');
 })->name('our.story');
 
 
 Route::get('/our-factory', function () {
-    return view('pages.OurFactory'); 
+    return view('Pages.OurFactory'); 
 })->name('our.factory');
 
 Route::get('/our-certificates', function () {
-    return view('pages.OurCertificates'); 
+    return view('Pages.OurCertificates'); 
 })->name('our.certificates');
 Route::get('/lang/{locale}', [LocalizationController::class, 'switchLang'])->name('lang.switch');
 Route::get('/our-products/{categoryID}', [ProductsController::class, 'getProductsWithSubcategories'])->name('products.subcategory');

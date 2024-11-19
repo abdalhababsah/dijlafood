@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'achievements_heading_en' => 'Our Achievements',
-    'achievements_description_en' => 'Here are some certificates and accomplishments that we take pride in.',
+    'achievements_heading' => 'Our Achievements',
+    'achievements_description' => 'Here are some certificates and accomplishments that we take pride in.',
     
 
 

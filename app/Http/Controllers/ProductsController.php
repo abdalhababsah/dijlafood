@@ -28,7 +28,7 @@ class ProductsController
             ->select(['id', 'name_' . $locale . ' as name']) 
             ->get();
     
-        return view('pages.ViewCategories', compact('categories'));
+        return view('Pages.ViewCategories', compact('categories'));
     }
 
 

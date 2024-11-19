@@ -102,6 +102,25 @@
                 text-align: center;
             }
         }
+                @media (min-width: 580px) and (max-width: 768px) {
+            .section-title p {
+                font-size: 30px !important;
+            }
+        }
+
+        @media screen and (max-width: 580px) {
+
+            .section-title p {
+                margin-top: 5px;
+                font-size: 22px !important;
+            }
+
+            #heroCarousel .carousel-item img {
+                min-height: 700px !important;
+                object-fit: cover;
+            }
+        }
+
     </style>
     @include('components.banner')
 

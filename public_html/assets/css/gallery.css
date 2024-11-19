@@ -1,0 +1,63 @@
+        /* Scoped styles for the gallery */
+        .gallery {
+            width: 100%;
+            max-width: 100%; /* Allow full width for the slider */
+            margin: 0 auto;
+        }
+        
+        .gallery-slider {
+            width: 100%;
+            height: auto;
+            margin: 0 0 10px 0;
+        }
+        
+        .gallery-slider .swiper-slide {
+            width: 100%; /* Ensure full width */
+            height: fit-content; /* Adjust height for better visibility */
+        }
+        
+        .gallery-slider .swiper-slide img {
+            display: block;
+            width: 100%; /* Image spans full width */
+            height: 100%; /* Image spans full height */
+            object-fit: cover; /* Cover the entire area without stretching */
+            margin: 0 auto;
+        }
+        
+        .gallery-thumbs {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .gallery-thumbs .swiper-slide {
+            width: 100px; /* Thumbnail width */
+            height: 100px; /* Thumbnail height */
+            text-align: center;
+            overflow: hidden;
+            opacity: 0.5; /* Reduced opacity for inactive thumbnails */
+        }
+        
+        .gallery-thumbs .swiper-slide-active {
+            opacity: 1; /* Full opacity for active thumbnail */
+        }
+        
+        .gallery-thumbs .swiper-slide img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--accent-color); /* Match brand accent color */
+            font-size: 24px;
+        }
+        
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            color: var(--nav-hover-color); /* Slightly darker color on hover */
+            transition: color 0.3s ease;
+        }

@@ -69,36 +69,39 @@
         }
 
         .products .product-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            /* Fixed number of columns */
-            gap: 20px;
-            /* Space between items */
-            padding: 20px;
-            /* Add padding for better spacing */
-        }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  /* Centers items horizontally */
+    align-items: center;      /* Centers items vertically */
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
 
-        @media (max-width: 1218px) {
-            .products .product-grid {
-                grid-template-columns: repeat(3, 1fr);
-                /* Reduce columns for smaller screens */
-            }
-        }
+.products .product-item {
+    max-width: 285px;
+    min-width: 228px;
+    flex: 0 0 auto;          /* Prevents items from stretching */
+}
 
-        @media (max-width: 768px) {
-            .products .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-                /* Reduce columns for smaller screens */
-            }
-        }
+/* Update your media queries to maintain centering */
+@media (max-width: 1218px) {
+    .products .product-grid {
+        justify-content: center;
+    }
+}
 
-        @media (max-width: 480px) {
-            .products .product-grid {
-                grid-template-columns: 1fr;
-                /* Single column for very small screens */
-            }
-        }
+@media (max-width: 768px) {
+    .products .product-grid {
+        justify-content: center;
+    }
+}
 
+@media (max-width: 480px) {
+    .products .product-grid {
+        justify-content: center;
+    }
+}
         /* Product Item Styling */
         .products .product-item .card {
             height: 100%;
@@ -158,6 +161,38 @@
             max-width: 285px;
             min-width: 228px;
         }
+
+        .product-grid{
+            {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+            /* Space between items */
+            padding: 20px;
+}
+        }
+        
+                @media (min-width: 580px) and (max-width: 768px) {
+            .section-title p {
+                font-size: 30px !important;
+            }
+        }
+
+        @media screen and (max-width: 580px) {
+
+            .section-title p {
+                margin-top: 5px;
+                font-size: 22px !important;
+            }
+
+            #heroCarousel .carousel-item img {
+                min-height: 700px !important;
+                object-fit: cover;
+            }
+        }
+
     </style>
     @include('components.banner')
     <section id="products" class="products section">
