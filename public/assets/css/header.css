@@ -8,7 +8,10 @@
   body {
     font-family: "Poppins", sans-serif;
   }
-  
+  .desktop-nav {
+    width: 647px;
+
+}
   /* Navigation Bar */
   nav {
     padding: 5px 5% 5px 0%;

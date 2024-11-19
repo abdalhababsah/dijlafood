@@ -66,7 +66,7 @@
                     <img src="{{ asset('assets/tiptop.png') }}" alt="Logo" />
                 </a>
             </div>
-    
+
         </div>
 
     </nav>
@@ -263,10 +263,12 @@
             display: none;
         }
     }
-.desktop-nav{
-    width: 647px ;
 
-}
+    .desktop-nav {
+        width: 647px;
+
+    }
+
     /* Additional Logo Styles */
     .logo img {
         max-height: 60px;
