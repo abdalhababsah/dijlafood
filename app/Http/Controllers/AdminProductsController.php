@@ -9,15 +9,16 @@ class AdminProductsController extends Controller
 {
     public function index()
     {
-        // Fetch products with their subcategories
-        $products = Product::with('subcategory')->get();
-
+        // Fetch products with their subcategories and paginate them
+        $products = Product::with('subcategory')->paginate(10); // Adjust the number (10) to your desired items per page
+    
         // Fetch all subcategories
         $subcategories = Subcategory::all();
-
+    
         // Pass both products and subcategories to the view
         return view('backend.products.index', compact('products', 'subcategories'));
     }
+    
 
     public function create()
     {

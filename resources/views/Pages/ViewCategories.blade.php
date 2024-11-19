@@ -104,7 +104,7 @@
 }
         /* Product Item Styling */
         .products .product-item .card {
-            height: 100%;
+            height: 373px;
 
             width: 300px;
             /* Ensure cards stretch to fill space */
