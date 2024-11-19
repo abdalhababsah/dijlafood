@@ -28,12 +28,7 @@
   nav .logo img {
     height: 85px;
   }
-  @media  (min-width:969px) {
-    .desktop-nav {
-
-      width: 647px;
-    }
-  }
+  
   /* Desktop Navigation */
   .desktop-nav {
     display: flex;

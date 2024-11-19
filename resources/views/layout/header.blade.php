@@ -264,7 +264,11 @@
         }
     }
 
-
+    @media (min-width: 969px) {
+    .desktop-nav {
+      width: 647px !important;
+    }
+  }
 
     /* Additional Logo Styles */
     .logo img {
