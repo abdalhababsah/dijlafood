@@ -6,7 +6,14 @@ body {
 .carousel-caption {
     text-align: right;
 }
-
+.desktop-nav li {
+    margin: 5px;
+    width: 103px !important;
+}
+.desktop-nav .dropdown-menu li {
+        margin: 5px;
+        width: 90% !important;
+    }
 .navbar-nav {
     margin-right: 0;
     margin-left: auto;

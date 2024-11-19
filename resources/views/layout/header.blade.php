@@ -66,7 +66,7 @@
                     <img src="{{ asset('assets/tiptop.png') }}" alt="Logo" />
                 </a>
             </div>
-
+    
         </div>
 
     </nav>
@@ -109,10 +109,6 @@
     /* Desktop Dropdown */
     .desktop-nav .dropdown {
         position: relative;
-    }
-
-    .desktop-nav li {
-        width: 103px;
     }
 
     .desktop-nav .dropdown-menu {
