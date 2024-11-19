@@ -105,6 +105,8 @@
         /* Product Item Styling */
         .products .product-item .card {
             height: 100%;
+
+            width: 300px;
             /* Ensure cards stretch to fill space */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             /* Add a subtle shadow for better visuals */

@@ -61,11 +61,14 @@
                 <span class="line"></span>
                 <span class="line"></span>
             </div>
+            <div class="logo secondery-logo">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('assets/tiptop.png') }}" alt="Logo" />
+                </a>
+            </div>
+    
         </div>
 
-            <div class="logo secondery-logo">
-                <img src="{{ asset('assets/tiptop.png') }}" alt="Logo" />
-            </div>
     </nav>
 
     <!-- Mobile Menu -->
@@ -104,137 +107,218 @@
 
 <style>
     /* Desktop Dropdown */
-.desktop-nav .dropdown {
-    position: relative;
-}
+    .desktop-nav .dropdown {
+        position: relative;
+    }
 
-.desktop-nav .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    background-color: var(--nav-dropdown-background-color);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    z-index: 1000;
-}
+    .desktop-nav .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        background-color: var(--nav-dropdown-background-color);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        z-index: 1000;
+    }
 
-.desktop-nav .dropdown:hover .dropdown-menu {
-    display: block; /* Show dropdown on hover */
-}
+    .desktop-nav .dropdown:hover .dropdown-menu {
+        display: block;
+        /* Show dropdown on hover */
+    }
 
-.desktop-nav .dropdown-menu li {
-    padding: 0;
-}
+    .desktop-nav .dropdown-menu li {
+        padding: 0;
+    }
 
-.desktop-nav .dropdown-menu li a {
-    display: block;
-    padding: 10px 15px;
-    color: var(--nav-dropdown-color);
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+    .desktop-nav .dropdown-menu li a {
+        display: block;
+        padding: 10px 15px;
+        color: var(--nav-dropdown-color);
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-.desktop-nav .dropdown-menu li a:hover {
-    background-color: var(--nav-dropdown-hover-color);
-    color: var(--contrast-color);
-}
+    .desktop-nav .dropdown-menu li a:hover {
+        background-color: var(--nav-dropdown-hover-color);
+        color: var(--contrast-color);
+    }
 
-/* Mobile Navigation */
-.menubar {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100%;
-    width: 300px;
-    background-color: var(--nav-mobile-background-color);
-    transition: left 0.3s ease;
-    z-index: 1000;
-    overflow-y: auto;
-}
+    /* Mobile Navigation */
+    .menubar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 300px;
+        background-color: var(--nav-mobile-background-color);
+        transition: left 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+    }
 
-.menubar.active {
-    left: 0;
-}
+    .menubar.active {
+        left: 0;
+    }
 
-.menubar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    .menubar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-.menubar ul li {
-    border-bottom: 1px solid var(--surface-color);
-}
+    .menubar ul li {
+        border-bottom: 1px solid var(--surface-color);
+    }
 
-.menubar ul li a,
-.menubar ul li button {
-    padding: 10px 16px;
-    font-size: 16px;
-    text-decoration: none;
-    color: var(--default-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    border: none;
-    background: none;
-    width: 100%;
-}
+    .menubar ul li a,
+    .menubar ul li button {
+        padding: 10px 16px;
+        font-size: 16px;
+        text-decoration: none;
+        color: var(--default-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        border: none;
+        background: none;
+        width: 100%;
+    }
 
-.menubar ul li a:hover,
-.menubar ul li button:hover {
-    color: var(--nav-hover-color);
-    background-color: var(--surface-color);
-}
+    .menubar ul li a:hover,
+    .menubar ul li button:hover {
+        color: var(--nav-hover-color);
+        background-color: var(--surface-color);
+    }
 
-.dropdown-container {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
+    .dropdown-container {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
 
-.dropdown-btn.active + .dropdown-container {
-    max-height: 300px; /* Adjust based on content */
-}
+    .dropdown-btn.active+.dropdown-container {
+        max-height: 300px;
+        /* Adjust based on content */
+    }
 
-.fa-caret-down {
-    font-size: 14px;
-    transition: transform 0.3s ease;
-}
+    .fa-caret-down {
+        font-size: 14px;
+        transition: transform 0.3s ease;
+    }
 
-.dropdown-btn.active .fa-caret-down {
-    transform: rotate(180deg);
-}
-.hamburger{
-    z-index: 1000000;
-}
+    .dropdown-btn.active .fa-caret-down {
+        transform: rotate(180deg);
+    }
+
+    .hamburger {
+        z-index: 1000000;
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+        display: none;
+        /* Hidden on desktop */
+        cursor: pointer;
+        padding: 10px;
+        background: transparent;
+        border: none;
+        position: relative;
+        z-index: 1000000;
+    }
+
+    .hamburger .line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--default-color);
+        margin: 5px 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Hamburger to X transformation */
+    .hamburger.active .line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Mobile Navigation Styles */
+    @media screen and (max-width: 768px) {
+        .hamburger {
+            display: block;
+            /* Show on mobile */
+        }
+
+        .desktop-nav {
+            display: none;
+        }
+    }
+
+    /* Additional Logo Styles */
+    .logo img {
+        max-height: 60px;
+        width: auto;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px;
+        background-color: var(--nav-background-color);
+    }
+
+
+
+    /* Ensure proper spacing between elements */
+    .d-flex {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
 </style>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    const mobileNav = document.querySelector(".hamburger");
-    const navbar = document.querySelector(".menubar");
-    const dropdownButtons = document.querySelectorAll(".dropdown-btn");
+        const hamburger = document.querySelector(".hamburger");
+        const navbar = document.querySelector(".menubar");
+        const dropdownButtons = document.querySelectorAll(".dropdown-btn");
 
-    // Toggle mobile nav
-    mobileNav.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-    });
+        // Toggle mobile nav and hamburger animation
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navbar.classList.toggle("active");
+        });
 
-    // Expand/collapse dropdowns in mobile nav
-    dropdownButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const dropdownContainer = button.nextElementSibling;
-            button.classList.toggle("active");
-            if (button.classList.contains("active")) {
-                dropdownContainer.style.maxHeight = dropdownContainer.scrollHeight + "px";
-            } else {
-                dropdownContainer.style.maxHeight = "0";
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!hamburger.contains(e.target) && !navbar.contains(e.target)) {
+                hamburger.classList.remove("active");
+                navbar.classList.remove("active");
             }
         });
+
+        // Expand/collapse dropdowns in mobile nav
+        dropdownButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const dropdownContainer = button.nextElementSibling;
+                button.classList.toggle("active");
+                if (button.classList.contains("active")) {
+                    dropdownContainer.style.maxHeight = dropdownContainer.scrollHeight + "px";
+                } else {
+                    dropdownContainer.style.maxHeight = "0";
+                }
+            });
+        });
     });
-});
 </script>
