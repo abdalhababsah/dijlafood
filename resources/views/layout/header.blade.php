@@ -264,10 +264,7 @@
         }
     }
 
-    .desktop-nav {
-        width: 647px;
 
-    }
 
     /* Additional Logo Styles */
     .logo img {

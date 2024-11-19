@@ -8,10 +8,6 @@
   body {
     font-family: "Poppins", sans-serif;
   }
-  .desktop-nav {
-    width: 647px;
-
-}
   /* Navigation Bar */
   nav {
     padding: 5px 5% 5px 0%;
@@ -32,12 +28,16 @@
   nav .logo img {
     height: 85px;
   }
-  
+  @media  (min-width:969px) {
+    .desktop-nav {
+
+      width: 647px;
+    }
+  }
   /* Desktop Navigation */
   .desktop-nav {
     display: flex;
     list-style: none;
-    width: 647px;
   }
   .secondery-logo img{
     margin-right:0px !important;
