@@ -11,7 +11,7 @@
   
   /* Navigation Bar */
   nav {
-    padding: 5px 5%;
+    padding: 5px 5% 5px 0%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,7 +34,7 @@
   .desktop-nav {
     display: flex;
     list-style: none;
-    width: fit-content;
+    width: 647px;
   }
   .secondery-logo img{
     margin-right:0px !important;

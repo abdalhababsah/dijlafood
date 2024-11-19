@@ -60,8 +60,15 @@ class SubcategoryController extends Controller
      */
     public function destroy(Subcategory $subcategory)
     {
-        //
+        try {
+            $subcategory->delete();
+            return redirect()->back()->with('success', 'Subcategory deleted successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to delete subcategory. Please try again.');
+        }
     }
+    
+    
     
 
 

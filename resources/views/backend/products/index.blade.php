@@ -4,8 +4,19 @@
     <div class="container-fluid">
         <h1 class="h3 mb-4 text-gray-800">Products</h1>
         <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#createProductModal">Add New Product</button>
+        @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('error') }}
+        </div>
+    @endif
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table ">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -13,7 +24,7 @@
                         <th>Name (AR)</th>
                         <th>Subcategory</th>
                         <th>Image</th>
-                        <th>Actions</th>
+                        <th >Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +41,7 @@
                                     No Image
                                 @endif
                             </td>
-                            <td>
+                            <td style="display: flex; gap:5px;">
                                 <button class="btn btn-warning btn-sm" data-toggle="modal"
                                     data-target="#editProductModal{{ $product->id }}">Edit</button>
                                 <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
@@ -165,4 +176,10 @@
             </div>
         </div>
     </div>
+
+    <style>
+        {
+    border: none;
+}
+    </style>
 @endsection

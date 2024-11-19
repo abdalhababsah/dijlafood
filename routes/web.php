@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SubcategoryController;
 
 
 // Home Route
@@ -71,3 +72,8 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 Route::post('categories/{category}/subcategory', [CategoryController::class, 'addSubcategory'])->name('admin.categories.addSubcategory')->middleware('auth');
 Route::put('subcategories/{subcategory}', [CategoryController::class, 'updateSubcategory'])->name('admin.categories.updateSubcategory')->middleware('auth');
 Route::resource('categories', CategoryController::class)->names('admin.categories')->middleware('auth');
+
+
+Route::delete('subcategories/{subcategory}', [SubcategoryController::class, 'destroy'])
+    ->name('admin.subcategory.destroy')
+    ->middleware('auth');

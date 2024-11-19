@@ -259,9 +259,6 @@
             /* Show on mobile */
         }
 
-        .desktop-nav {
-            display: none;
-        }
     }
 
     /* Additional Logo Styles */

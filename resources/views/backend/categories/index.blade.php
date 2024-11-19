@@ -4,9 +4,20 @@
     <div class="container-fluid">
         <h1 class="h3 mb-4 text-gray-800">Categories</h1>
         <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#createCategoryModal">Add New Category</button>
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+            </div>
+        @endif
 
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -30,7 +41,7 @@
                                     </span>
                                 @endforeach
                             </td>
-                         <td class="d-flex align-items-center justify-content-start" style="gap: 5px;">
+                            <td class="d-flex align-items-center justify-content-start" style="gap: 5px;">
                                 <button class="btn btn-warning btn-sm" data-toggle="modal"
                                     data-target="#editCategoryModal{{ $category->id }}">Edit</button>
                                 <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST"
@@ -196,10 +207,20 @@
                                                         value="{{ $subcategory->name_ar }}" required>
                                                 </div>
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            <div class="modal-footer d-flex justify-content-between">
+                                                <form action="{{ route('admin.subcategory.destroy', $subcategory->id) }}"
+                                                    method="POST" style="display: inline-block;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger">Delete</button>
+                                                </form>
+
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+
+                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
