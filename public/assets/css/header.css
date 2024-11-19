@@ -34,6 +34,7 @@
   .desktop-nav {
     display: flex;
     list-style: none;
+    width: fit-content;
   }
   .secondery-logo img{
     margin-right:0px !important;
